@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit User Information</title>
+    <link href="/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-100">
+    <form
+      action="/put-crud"
+      method="POST"
+      class="max-w-2xl mx-auto bg-white p-8 mt-10 rounded-2xl shadow-lg space-y-6"
+    >
+      <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">
+        Edit User Information
+      </h2>
+
+      <!-- Firstname + Lastname -->
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <label
+            for="firstname"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            >First Name</label
+          >
+          <input
+            value="<%=user.firstName%>"
+            type="text"
+            id="firstname"
+            name="firstname"
+            required
+            class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label
+            for="lastname"
+            class="block text-sm font-semibold text-gray-700 mb-2"
+            >Last Name</label
+          >
+          <input
+            value="<%=user.lastName%>"
+            type="text"
+            id="lastname"
+            name="lastname"
+            required
+            class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div>
+        <label
+          for="address"
+          class="block text-sm font-semibold text-gray-700 mb-2"
+          >Address</label
+        >
+        <input
+          value="<%=user.address%>"
+          type="text"
+          id="address"
+          name="address"
+          class="w-full border border-gray-300 p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <!-- ID USER -->
+      <input name="id" value="<%=user.id%>" type="text" class="hidden">
+      <!-- Submit -->
+      <button
+        type="submit"
+        class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold text-lg shadow-md hover:bg-blue-700 transition"
+      >
+        Update
+      </button>
+    </form>
+  </body>
+</html>
