@@ -1,5 +1,6 @@
 import express from "express";
 import homePageController from "../controllers/homeController.js";
+import userController from "../controllers/userController.js";
 let router = express.Router();
 
 let initWebRouter = (app) => {
@@ -11,6 +12,9 @@ let initWebRouter = (app) => {
 
   router.post("/put-crud", homePageController.putCRUD); // page đã update user từ page sửa user
   router.get("/delete-crud", homePageController.deleteCRUD); //xóa user
+
+  //get API
+  router.post("/api/login", userController.handlelLogin)
   return app.use("/", router);
 };
 export default initWebRouter;
